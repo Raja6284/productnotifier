@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
-import healthcheckRouter from "./router/healthcheck.router.js"
+import healthcheckRouter from "./router/healthcheck.router.js";
+import sendEmailRouter from "./router/sendemail.routes.js"
 
 const app = express()   //once the app has been designed you can use middlewares
 
@@ -20,6 +21,7 @@ app.use(express.static("public"))
 
 //router
 app.use("/api/v1/healthcheck",healthcheckRouter)
+app.use("/api/v1/sendemail",sendEmailRouter)
 
 
 
